@@ -1,0 +1,45 @@
+{
+  "skill_name": "gsd-2",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm trying to understand how GSD's auto-mode works. Where is the state machine implemented, and what does the dispatch pipeline look like from reading disk state to executing a unit? I need to know the key files and their roles.",
+      "expected_output": "Accurate identification of auto.ts as the state machine, auto-dispatch.ts as the dispatch table, and explanation of the 13-step pipeline from disk state reading to completion. Should reference specific file paths under src/resources/extensions/gsd/ and explain the flow.",
+      "files": [],
+      "expectations": [
+        "Correctly identifies src/resources/extensions/gsd/auto.ts as the state machine",
+        "Correctly identifies auto-dispatch.ts as the dispatch table",
+        "Explains the 13-step dispatch pipeline",
+        "Mentions fresh session per unit design",
+        "References at least 3 auto-*.ts modules with their roles"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to add a new LLM provider (Groq) to GSD 2. What files do I need to touch, what patterns should I follow, and how does provider registration work?",
+      "expected_output": "Should identify packages/pi-ai/src/providers/ as the provider directory, explain the pattern from existing providers (Anthropic, OpenAI), mention api-registry.ts for registration, and note lazy loading. Should reference CONTRIBUTING.md guidance on provider-agnostic design.",
+      "files": [],
+      "expectations": [
+        "Identifies packages/pi-ai/src/providers/ as the provider location",
+        "Mentions api-registry.ts for registration",
+        "Explains lazy loading pattern",
+        "References existing providers as templates",
+        "Mentions OAuth flow if needed (packages/pi-ai/src/utils/oauth/)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What's the test framework used in GSD 2, how do I run the tests, and what's the correct pattern for writing new tests? I need to add a regression test for a bug fix.",
+      "expected_output": "Should identify node:test with node:assert/strict (NOT Jest/Vitest), explain test commands (npm test, npm run test:unit), show the correct beforeEach/afterEach or t.after() patterns, mention template literal fixture data convention, and note that bug fixes require regression tests.",
+      "files": [],
+      "expectations": [
+        "Correctly identifies node:test as the framework (not Jest or Vitest)",
+        "Mentions node:assert/strict for assertions",
+        "Lists at least 2 test commands",
+        "Shows the beforeEach/afterEach or t.after() cleanup pattern",
+        "Mentions bug fixes require regression tests",
+        "Notes template literal fixture data should use array join"
+      ]
+    }
+  ]
+}
