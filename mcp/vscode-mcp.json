@@ -1,0 +1,42 @@
+{
+  "servers": {
+    "browseros": {
+      "type": "sse",
+      "url": "http://127.0.0.1:9001/mcp",
+      "description": "BrowserOS browser automation MCP server"
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "description": "Sequential thinking for complex problem-solving"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/lastborn"],
+      "description": "File system access for reading/writing files"
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>"
+      },
+      "description": "GitHub API access for repo operations and PR workflows"
+    },
+    "desktop": {
+      "command": "/home/lastborn/mcp-bridge/venv/bin/python3",
+      "args": ["-m", "computer_control_mcp"],
+      "env": {
+        "DISPLAY": ":0"
+      },
+      "description": "Desktop automation via pyautogui"
+    },
+    "wpcom-mcp": {
+      "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1",
+      "description": "WordPress.com API access"
+    }
+  }
+}

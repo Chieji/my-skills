@@ -1,0 +1,276 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "model": {
+    "name": "z-ai/glm-4.5-air:free"
+  },
+  "$version": 4,
+  "ui": {
+    "feedbackLastShownTimestamp": 1772685772531
+  },
+  "mcp": {
+    "servers": {
+      "browseros": {
+        "type": "sse",
+        "url": "http://127.0.0.1:9001/mcp",
+        "description": "BrowserOS browser automation MCP server"
+      },
+      "sequential-thinking": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ],
+        "description": "Sequential thinking for complex problem-solving"
+      },
+      "filesystem": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "/home/lastborn"
+        ],
+        "description": "File system access for reading/writing files"
+      },
+      "github": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-github"
+        ],
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_PERSONAL_ACCESS_TOKEN>"
+        },
+        "description": "GitHub API access for repo operations and PR workflows"
+      }
+    }
+  },
+  "mcpServers": {
+    "wpcom-mcp": {
+      "url": "https://public-api.wordpress.com/wpcom/v2/mcp/v1"
+    },
+    "desktop": {
+      "command": "/home/lastborn/mcp-bridge/venv/bin/python3",
+      "args": [
+        "-m",
+        "computer_control_mcp"
+      ],
+      "env": {
+        "DISPLAY": ":0"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp"
+      ],
+      "env": {
+        "PLAYWRIGHT_HEADLESS": "true"
+      }
+    },
+    "supabase": {
+      "httpUrl": "https://mcp.supabase.com/mcp?project_ref=wsbwitidkyldcuvywbev"
+    },
+    "browseros": {
+      "httpUrl": "http://127.0.0.1:9001/mcp"
+    }
+  },
+  "env": {
+    "BAILIAN_CODING_PLAN_API_KEY": "<YOUR_BAILIAN_CODING_PLAN_API_KEY>",
+    "DASHSCOPE_API_KEY": "<YOUR_DASHSCOPE_API_KEY>",
+    "OPENROUTER_API_KEY": "<YOUR_OPENROUTER_API_KEY>"
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "z-ai/glm-4.5-air:free",
+        "name": "OpenRouter · Z.ai: GLM 4.5 Air (free)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY",
+        "generationConfig": {
+          "contextWindowSize": 131072
+        }
+      },
+      {
+        "id": "openai/gpt-oss-120b:free",
+        "name": "OpenRouter · OpenAI: gpt-oss-120b (free)",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "envKey": "OPENROUTER_API_KEY",
+        "generationConfig": {
+          "contextWindowSize": 131072
+        }
+      },
+      {
+        "id": "qwen3.5-plus",
+        "name": "[ModelStudio Coding Plan] qwen3.5-plus",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 1000000,
+          "modalities": {
+            "image": true,
+            "video": true
+          }
+        }
+      },
+      {
+        "id": "qwen3.6-plus",
+        "name": "[ModelStudio Coding Plan] qwen3.6-plus",
+        "description": "Currently available to Pro subscribers only.",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 1000000,
+          "modalities": {
+            "image": true,
+            "video": true
+          }
+        }
+      },
+      {
+        "id": "glm-5",
+        "name": "[ModelStudio Coding Plan] glm-5",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 202752
+        }
+      },
+      {
+        "id": "kimi-k2.5",
+        "name": "[ModelStudio Coding Plan] kimi-k2.5",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 262144,
+          "modalities": {
+            "image": true,
+            "video": true
+          }
+        }
+      },
+      {
+        "id": "MiniMax-M2.5",
+        "name": "[ModelStudio Coding Plan] MiniMax-M2.5",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 196608
+        }
+      },
+      {
+        "id": "qwen3-coder-plus",
+        "name": "[ModelStudio Coding Plan] qwen3-coder-plus",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "contextWindowSize": 1000000
+        }
+      },
+      {
+        "id": "qwen3-coder-next",
+        "name": "[ModelStudio Coding Plan] qwen3-coder-next",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "contextWindowSize": 262144
+        }
+      },
+      {
+        "id": "qwen3-max-2026-01-23",
+        "name": "[ModelStudio Coding Plan] qwen3-max-2026-01-23",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 262144
+        }
+      },
+      {
+        "id": "glm-4.7",
+        "name": "[ModelStudio Coding Plan] glm-4.7",
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "envKey": "BAILIAN_CODING_PLAN_API_KEY",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 202752
+        }
+      },
+      {
+        "id": "qwen3.5-plus",
+        "name": "[ModelStudio Standard] qwen3.5-plus",
+        "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "envKey": "DASHSCOPE_API_KEY"
+      },
+      {
+        "id": "glm-5",
+        "name": "[ModelStudio Standard] glm-5",
+        "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "envKey": "DASHSCOPE_API_KEY"
+      },
+      {
+        "id": "kimi-k2.5",
+        "name": "[ModelStudio Standard] kimi-k2.5",
+        "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+        "envKey": "DASHSCOPE_API_KEY"
+      }
+    ]
+  },
+  "ide": {
+    "enabled": false
+  },
+  "agents": {
+    "arena": {
+      "preserveArtifacts": true
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(timeout *)",
+      "Bash(ssh *)",
+      "Bash(ping *)",
+      "Bash(source *)",
+      "Bash(alias *)",
+      "Bash(ssh-inf *)",
+      "Bash(composio *)",
+      "Bash(npm install *)",
+      "Bash(git clone *)",
+      "Bash(pip install *)",
+      "Bash(pipx *)",
+      "Bash(python3 *)"
+    ]
+  },
+  "providerMetadata": {
+    "coding-plan": {
+      "region": "global",
+      "version": "bc6494a8413d8b400790a1441bfc9c2a9085e9e67ccd8206bf31ad94f3c7d2c8",
+      "baseUrl": "https://coding.dashscope.aliyuncs.com/v1"
+    }
+  }
+}
