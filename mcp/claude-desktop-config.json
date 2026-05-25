@@ -1,0 +1,12 @@
+{
+  "preferences": {
+    "coworkScheduledTasksEnabled": false,
+    "ccdScheduledTasksEnabled": false,
+    "coworkWebSearchEnabled": true,
+    "sidebarMode": "chat"
+  },
+  "environment": {
+    "PATH": "/usr/bin:/usr/local/bin:/home/lastborn/bin:/home/lastborn/.local/bin",
+    "PYTHON": "/usr/bin/python3"
+  }
+}
