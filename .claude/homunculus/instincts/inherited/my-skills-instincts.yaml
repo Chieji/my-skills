@@ -1,0 +1,259 @@
+# Instincts generated from https://github.com/Chieji/my-skills
+# Generated: 2026-05-25T21:19:16.103Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: my-skills-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Chieji/my-skills
+---
+
+# My Skills Commit Length
+
+## Action
+
+Write moderate-length commit messages (~56 characters)
+
+## Evidence
+
+- Average commit message length: 56 chars
+- Based on 1 commits
+
+---
+id: my-skills-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Chieji/my-skills
+---
+
+# My Skills Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: my-skills-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Chieji/my-skills
+---
+
+# My Skills Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: my-skills-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Chieji/my-skills
+---
+
+# My Skills Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: my-skills-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Chieji/my-skills
+---
+
+# My Skills Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: my-skills-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct File Naming
+
+## Action
+
+Name the file using kebab-case
+
+## Evidence
+
+- Pattern in namingConventions.files
+
+---
+id: my-skills-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: my-skills-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: my-skills-instinct-constant-naming
+trigger: "When defining a new constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: my-skills-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle
+
+---
+id: my-skills-instinct-export-style
+trigger: "When exporting from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle
+
+---
+id: my-skills-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Test Location
+
+## Action
+
+Place test files in a separate folder from source code
+
+## Evidence
+
+- Pattern in architecture.testLocation
+
+---
+id: my-skills-instinct-commit-format
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Chieji/my-skills
+---
+
+# My Skills Instinct Commit Format
+
+## Action
+
+Use a freeform commit message without a prefix, with an average length of around 56 characters
+
+## Evidence
+
+- Pattern in commits.type
+- Example: 'Add sanitized local MCP registry and configuration files'
+
